@@ -12,8 +12,8 @@ import SongsService from "../services/SongsService";
 interface SongFormData {
   name: string;
   album: string;
-  gender: string;
-  relaseDate: Date;
+  genero: string;
+  releaseDate: Date;
   coverImg: string;
   song: string;
 }
@@ -25,8 +25,8 @@ const NewSong = ({artistId} : {artistId: number}) => {
     const formData = new FormData();
     formData.append("name", data.name);
     formData.append("album", data.album);
-    formData.append("gender", data.gender);
-    formData.append("relaseDate", data.relaseDate.toString());
+    formData.append("genero", data.genero);
+    formData.append("releaseDate", data.releaseDate.toString());
     formData.append("coverImg", data.coverImg);
     formData.append("song", data.song[0]);
     formData.append("artistId", artistId.toString());
@@ -74,11 +74,11 @@ const NewSong = ({artistId} : {artistId: number}) => {
               placeholder="Gender"
               fullWidth
               size="small"
-              {...register("gender")}
+              {...register("genero")}
             ></TextField>
           </FormControl>
           <FormControl sx={{ marginBottom: "10px" }}>
-            <FormLabel htmlFor="coverImg">Release date</FormLabel>
+            <FormLabel htmlFor="coverImg">url cover</FormLabel>
             <TextField
               margin="dense"
               id="coverImg"
@@ -96,7 +96,7 @@ const NewSong = ({artistId} : {artistId: number}) => {
               type="date"
               fullWidth
               size="small"
-              {...register("relaseDate")}
+              {...register("releaseDate")}
             ></TextField>
           </FormControl>
           <FormControl sx={{ marginBottom: "10px" }}>
