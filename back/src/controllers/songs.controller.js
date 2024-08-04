@@ -12,7 +12,7 @@ const uploadSong = async (req, res) => {
   } catch (error) {
     console.error(error);
     return res
-      .status(500)
+      .status(404)
       .json({ message: "Error uploading file", error: error });
   }
   try {
@@ -23,6 +23,12 @@ const uploadSong = async (req, res) => {
     });
     return res.status(201).json(song);
   } catch (error) {
+    try {
+      await deleteFile(result.s3Id);
+      await song.destroy();
+    }catch (error) {
+      console.error(error);
+    }
     console.error(error);
     return res
       .status(500)
