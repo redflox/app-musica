@@ -1,3 +1,5 @@
+import Song from "./Song";
+
 export default interface Artist {
     id: number;
     name: string;
@@ -7,4 +9,5 @@ export default interface Artist {
     createdAt: string;
     updatedAt: string;
     userId: number;
+    songs: Song[];
 }
