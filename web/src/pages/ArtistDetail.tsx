@@ -33,7 +33,7 @@ const ArtistDetail = () => {
           <Typography variant="body1">{artist?.bio}</Typography>
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
-              <SongList />
+              <SongList songs={artist.songs}/>
             </Grid>
             <Grid item xs={12} md={6}>
               <NewSong artistId={artist.id}/>
