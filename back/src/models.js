@@ -13,7 +13,7 @@ const Song = sequelize.define(
       allowNull: false,
     },
     releaseDate: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     genero: {
