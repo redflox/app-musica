@@ -1,14 +1,16 @@
-import { Container } from "@mui/material"
-import { Outlet } from "react-router-dom"
+import { Container } from "@mui/material";
+import ResponsiveAppBar from "./components/Navbar";
+import { Outlet } from "react-router-dom";
 
 function App() {
-
   return (
-    <Container> 
-      <h1>app-musica</h1>
-      <Outlet />      
-    </Container>
-  )
+    <>
+      <ResponsiveAppBar />
+      <Container>
+        <Outlet />
+      </Container>
+    </>
+  );
 }
 
-export default App
+export default App;
